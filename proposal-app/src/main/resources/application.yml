@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: proposal-app
+  jpa:
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/proposal_db?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: root
+    password:
+  rabbitmq:
+    .host: localhost
+    .port: 5672
+    .username: guest
+    .password: guest
+
+rabbitmq:
+  pendingproposal:
+    exchange: pending-proposal.ex
